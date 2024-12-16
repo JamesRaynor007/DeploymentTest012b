@@ -15,22 +15,18 @@ print(df.head())  # Verifica las primeras filas del DataFrame
 def read_root(request: Request):
     base_url = f"{request.url.scheme}://{request.url.netloc}"
     return {
-        "message": "Bienvenido a la API de películas.\n",
+        "message": "Bienvenido a la API de películas.<br>",
         "instructions": (
-            "Usa el endpoint /score/?title=nombre_de_la_pelicula para obtener datos de una película específica.\n"
-            
-            "Por ejemplo: /score/?title=Toy%20Story.\n"
-
-            "O usa /titles para obtener el listado de películas.\n"
-            
-            "Por ejemplo: /titles.\n"
+            "Usa el endpoint /score/?title=nombre_de_la_pelicula para obtener datos de una película específica.<br>"
+            "Por ejemplo: /score/?title=Toy%20Story.<br>"
+            "O usa /titles para obtener el listado de películas.<br>"
+            "Por ejemplo: /titles.<br>"
         ),
         "links example": [
             {"title": "Toy Story", "url": f"{base_url}/score/?title=Toy%20Story"},
             {"title": "Listado de películas", "url": f"{base_url}/titles"}
         ]
-    }
-
+    }    
 @app.get("/score/")
 async def get_movie(title: str):
     print(f"Buscando película: '{title}'")  # Muestra el título buscado
