@@ -17,10 +17,10 @@ def read_root(request: Request):
     return {
         "message": "Bienvenido a la API de películas.",
         "instructions": (
-            "Usa el endpoint /score/?title=nombre_de_la_pelicula para obtener datos de una película específica.\n",
+            "Usa el endpoint /score/?title=nombre_de_la_pelicula para obtener datos de una película específica.",
             "Por ejemplo: /score/?title=Toy%20Story",
 
-            "O usa /titles para obtener el listado de películas.\n",
+            "O usa /titles para obtener el listado de películas.",
             
             "Por ejemplo: /titles",
         ),
