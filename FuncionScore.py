@@ -15,12 +15,14 @@ print(df.head())  # Verifica las primeras filas del DataFrame
 def read_root(request: Request):
     base_url = f"{request.url.scheme}://{request.url.netloc}"
     return {
-        "message": "Bienvenido a la API de películas.<br>",
+        "message": "Bienvenido a la API de películas.",
         "instructions": (
-            "Usa el endpoint /score/?title=nombre_de_la_pelicula para obtener datos de una película específica.<br>"
-            "Por ejemplo: /score/?title=Toy%20Story.<br>"
-            "O usa /titles para obtener el listado de películas.<br>"
-            "Por ejemplo: /titles.<br>"
+            "Usa el endpoint /score/?title=nombre_de_la_pelicula para obtener datos de una película específica.\n",
+            "Por ejemplo: /score/?title=Toy%20Story",
+
+            "O usa /titles para obtener el listado de películas.\n",
+            
+            "Por ejemplo: /titles",
         ),
         "links example": [
             {"title": "Toy Story", "url": f"{base_url}/score/?title=Toy%20Story"},
